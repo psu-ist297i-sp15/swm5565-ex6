@@ -4,7 +4,13 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    # @topics = Topic.all
+    @topics = Topic.sorted
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @topics }
+    end
   end
 
   # GET /topics/1
@@ -66,6 +72,7 @@ class TopicsController < ApplicationController
     @topic.votes.create
     redirect_to(topics_path)
   end
+
 
   def downvote
     @topic = Topic.find(params[:id])
