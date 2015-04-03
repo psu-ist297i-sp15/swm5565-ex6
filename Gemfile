@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+gem 'bootstrap-sass', '~>3.2.0'
+gem 'autoprefixer-rails'
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -9,7 +10,7 @@ group :development, :test do
 end
 
 group :production do
-	gem 'pg'
+
 	gem 'rails_12factor'
 end
 # Use SCSS for stylesheets
