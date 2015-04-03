@@ -7,7 +7,7 @@ class Topic < ActiveRecord::Base
 			(SELECT count(votes.topic_id) FROM votes WHERE votes.topic_id = topics.id)
 				AS votes_count
 			FROM topics
-			ORDER BY votes_count ASC"
+			ORDER BY votes_count DESC"
 		)
 	end
 
