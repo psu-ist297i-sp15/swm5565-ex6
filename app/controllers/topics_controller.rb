@@ -1,6 +1,10 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
+  #before any method in this index is run, filter it through this - the authenticate user method
+  #which is in devise
+  before_filter :authenticate_user!, except: [:index, :show]
+
   # GET /topics
   # GET /topics.json
   def index
